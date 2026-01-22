@@ -5,101 +5,135 @@
   <title>701 Hoovers OT | Roster</title>
   <link rel="stylesheet" href="style.css">
 
+  <!-- GTA-style fallback font -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
   <style>
-    /* Override global centering */
     body {
-      align-items: flex-start;
+      background: linear-gradient(180deg, #0c0c0c 0%, #000 100%);
+      overflow-x: hidden;
     }
 
-    .roster-page {
-      width: 100%;
-      max-width: 800px;
-      margin: 40px auto;
+    .roster-wrapper {
+      max-width: 900px;
+      margin: 30px auto;
       padding: 0 20px;
     }
 
     h1 {
-      color: orange;
       text-align: center;
-      margin-bottom: 40px;
-      letter-spacing: 2px;
+      color: orange;
+      font-family: "Pricedown", "Bebas Neue", sans-serif;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+      text-shadow: 0 0 12px rgba(255,165,0,0.5);
     }
 
     .rank {
-      margin-bottom: 30px;
+      margin-bottom: 18px;
     }
 
     .rank-title {
-      color: orange;
-      font-size: 20px;
+      font-size: 15px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      border-bottom: 2px solid orange;
-      padding-bottom: 6px;
-      margin-bottom: 12px;
+      color: orange;
+      margin-bottom: 6px;
+      border-left: 4px solid orange;
+      padding-left: 10px;
+    }
+
+    .members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 8px;
     }
 
     .member {
-      background-color: #141414;
-      padding: 10px 14px;
-      margin: 6px 0;
+      background: #141414;
+      padding: 8px 10px;
       border-radius: 5px;
-      font-size: 16px;
+      font-size: 14px;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .member:hover {
+      background: #1d1d1d;
+      box-shadow: 0 0 8px rgba(255,165,0,0.4);
+    }
+
+    .sub {
+      font-size: 12px;
+      color: orange;
+      opacity: 0.85;
     }
 
     .back-btn {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 10px 22px;
-      background-color: orange;
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0;
+      padding: 8px 20px;
+      background: orange;
       color: black;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 6px;
+      border-radius: 5px;
     }
 
     .back-btn:hover {
-      background-color: #ffb347;
+      background: #ffb347;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="roster-page">
+  <div class="roster-wrapper">
 
     <h1>Gang Roster</h1>
 
     <div class="rank">
       <div class="rank-title">OG</div>
-      <div class="member">DIRTY</div>
-      <div class="member">Marcus</div>
-      <div class="member">Ricky</div>
+      <div class="members">
+        <div class="member">DIRTY</div>
+        <div class="member">Marcus</div>
+        <div class="member">Ricky</div>
+      </div>
     </div>
 
     <div class="rank">
       <div class="rank-title">Recruiter Management</div>
-      <div class="member">Star</div>
-      <div class="member">DeGen</div>
-      <div class="member">Jayden <span style="color: orange;">(Media Team)</span></div>
+      <div class="members">
+        <div class="member">Star</div>
+        <div class="member">DeGen</div>
+        <div class="member">Jayden<br><span class="sub">Media Team</span></div>
+      </div>
     </div>
 
     <div class="rank">
       <div class="rank-title">Soldier</div>
-      <div class="member">BUBBA</div>
-      <div class="member">J. Moore</div>
+      <div class="members">
+        <div class="member">BUBBA</div>
+        <div class="member">J. Moore</div>
+      </div>
     </div>
 
     <div class="rank">
       <div class="rank-title">Certified Driver</div>
-      <div class="member">Kwesh</div>
+      <div class="members">
+        <div class="member">Kwesh</div>
+      </div>
     </div>
 
     <div class="rank">
       <div class="rank-title">Starter</div>
-      <div class="member">Dmax</div>
-      <div class="member">Sam</div>
-      <div class="member">TTE</div>
-      <div class="member">Thomas</div>
+      <div class="members">
+        <div class="member">Dmax</div>
+        <div class="member">Sam</div>
+        <div class="member">TTE</div>
+        <div class="member">Thomas</div>
+      </div>
     </div>
 
     <a href="index.html" class="back-btn">⬅ Back Home</a>
