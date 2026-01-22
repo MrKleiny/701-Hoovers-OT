@@ -4,31 +4,46 @@
   <meta charset="UTF-8">
   <title>701 Hoovers OT | Roster</title>
   <link rel="stylesheet" href="style.css">
+
   <style>
-    .roster-container {
-      max-width: 700px;
-      width: 90%;
+    /* Override global centering */
+    body {
+      align-items: flex-start;
+    }
+
+    .roster-page {
+      width: 100%;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      color: orange;
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
     }
 
     .rank {
-      margin-top: 30px;
-      border-left: 4px solid orange;
-      padding-left: 15px;
+      margin-bottom: 30px;
     }
 
-    .rank h2 {
+    .rank-title {
       color: orange;
-      margin-bottom: 10px;
+      font-size: 20px;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      border-bottom: 2px solid orange;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
     }
 
     .member {
       background-color: #141414;
-      padding: 10px 15px;
-      margin: 8px 0;
-      border-radius: 6px;
-      font-size: 18px;
+      padding: 10px 14px;
+      margin: 6px 0;
+      border-radius: 5px;
+      font-size: 16px;
     }
 
     .back-btn {
@@ -40,53 +55,47 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 6px;
-      transition: 0.2s;
     }
 
     .back-btn:hover {
-      background-color: #ffae42;
+      background-color: #ffb347;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container roster-container">
+  <div class="roster-page">
 
-    <h1 style="color: orange;">Gang Roster</h1>
+    <h1>Gang Roster</h1>
 
-    <!-- OGs -->
     <div class="rank">
-      <h2>OG</h2>
+      <div class="rank-title">OG</div>
       <div class="member">DIRTY</div>
       <div class="member">Marcus</div>
       <div class="member">Ricky</div>
     </div>
 
-    <!-- Recruiter Management -->
     <div class="rank">
-      <h2>Recruiter Management</h2>
+      <div class="rank-title">Recruiter Management</div>
       <div class="member">Star</div>
       <div class="member">DeGen</div>
       <div class="member">Jayden <span style="color: orange;">(Media Team)</span></div>
     </div>
 
-    <!-- Soldier -->
     <div class="rank">
-      <h2>Soldier</h2>
+      <div class="rank-title">Soldier</div>
       <div class="member">BUBBA</div>
       <div class="member">J. Moore</div>
     </div>
 
-    <!-- Certified Driver -->
     <div class="rank">
-      <h2>Certified Driver</h2>
+      <div class="rank-title">Certified Driver</div>
       <div class="member">Kwesh</div>
     </div>
 
-    <!-- Starter -->
     <div class="rank">
-      <h2>Starter</h2>
+      <div class="rank-title">Starter</div>
       <div class="member">Dmax</div>
       <div class="member">Sam</div>
       <div class="member">TTE</div>
