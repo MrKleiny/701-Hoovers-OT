@@ -3,9 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>701 Hoovers OT</title>
-  <link rel="stylesheet" href="style.css">
-
-  <!-- GTA-style / FiveM fallback font -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <style>
@@ -26,7 +23,25 @@
       position: relative;
     }
 
-    /* Animated fog / smoke in background */
+    /* BACKGROUND SKYLINE */
+    .skyline {
+      position: absolute;
+      bottom: 0;
+      left: -100%;
+      width: 300%;
+      height: 40%;
+      background: linear-gradient(to top, #111 20%, transparent 100%), 
+                  repeating-linear-gradient(to right, #111 0 20px, #222 20px 40px);
+      animation: moveSkyline 30s linear infinite;
+      z-index: -3;
+    }
+
+    @keyframes moveSkyline {
+      0% { left: -100%; }
+      100% { left: 0%; }
+    }
+
+    /* FOG/SMOKE */
     body::before {
       content: "";
       position: absolute;
@@ -46,7 +61,7 @@
       100% { background-position: 0% 0%, 50% 50%; }
     }
 
-    /* GTA city glow (animated dots) */
+    /* GTA CITY GLOW */
     body::after {
       content: "";
       position: absolute;
@@ -67,17 +82,17 @@
       100% { background-position: 0% 0%, 100% 100%; }
     }
 
-    /* TITLE */
+    /* TITLE & SUBHEADING */
     h1 {
       font-size: 72px;
       color: orange;
       letter-spacing: 3px;
       text-shadow: 0 0 20px rgba(255,165,0,0.6);
       margin-bottom: 10px;
-      transition: 0.4s text-shadow;
       position: relative;
       z-index: 1;
       animation: titleShadow 3s ease-in-out infinite alternate;
+      overflow: hidden;
     }
 
     h1:hover {
@@ -90,8 +105,8 @@
       margin-bottom: 30px;
       opacity: 0.85;
       letter-spacing: 1px;
-      z-index: 1;
       position: relative;
+      z-index: 1;
       animation: titleShadow 3s ease-in-out infinite alternate;
     }
 
@@ -101,7 +116,25 @@
       100% { text-shadow: 0 0 20px rgba(255,165,0,0.5), 0 0 40px rgba(255,165,0,0.3); }
     }
 
-    /* FLOATING NEON PARTICLES */
+    /* NEON STREAKS OVER TITLE */
+    h1::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 150%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,165,0,0.8), rgba(255,255,255,0.2));
+      transform: skewX(-20deg);
+      animation: streakMove 3s linear infinite;
+    }
+
+    @keyframes streakMove {
+      0% { left: -150%; }
+      100% { left: 150%; }
+    }
+
+    /* FLOATING PARTICLES */
     .particle {
       position: absolute;
       width: 6px;
@@ -111,6 +144,14 @@
       opacity: 0.7;
       animation: floatParticle 6s linear infinite;
       z-index: 0;
+      transition: all 0.3s ease;
+    }
+
+    .particle:hover {
+      transform: scale(2) translate(-10px,-10px);
+      opacity: 1;
+      background-color: #ffb347;
+      box-shadow: 0 0 12px #ffb347, 0 0 20px #ffa500;
     }
 
     @keyframes floatParticle {
@@ -142,7 +183,25 @@
       opacity: 0;
       animation: fadeInUp 0.6s forwards;
       position: relative;
+      overflow: hidden;
       transition: 0.3s all;
+    }
+
+    /* Neon streaks behind buttons */
+    .nav-buttons a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,165,0,0.8), rgba(255,255,255,0.2));
+      transform: skewX(-20deg);
+      transition: 0.5s all;
+    }
+
+    .nav-buttons a:hover::before {
+      left: 150%;
     }
 
     .nav-buttons a:hover {
@@ -152,12 +211,10 @@
       border-color: #ffb347;
     }
 
-    /* Buttons sequential animation */
     .nav-buttons a:nth-child(1) { animation-delay: 0.2s; }
     .nav-buttons a:nth-child(2) { animation-delay: 0.4s; }
     .nav-buttons a:nth-child(3) { animation-delay: 0.6s; }
 
-    /* Fade in and up animation */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -166,7 +223,10 @@
 </head>
 
 <body>
-  <!-- Floating neon particles -->
+  <!-- BACKGROUND SKYLINE -->
+  <div class="skyline"></div>
+
+  <!-- FLOATING PARTICLES -->
   <div class="particle" style="top:20%; left:10%; animation-duration:5s;"></div>
   <div class="particle" style="top:50%; left:80%; animation-duration:7s;"></div>
   <div class="particle" style="top:30%; left:60%; animation-duration:6s;"></div>
