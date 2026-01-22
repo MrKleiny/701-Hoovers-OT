@@ -5,51 +5,95 @@
   <title>701 Hoovers OT</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- GTA / FiveM style font fallback -->
+  <!-- GTA-style / FiveM fallback font -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <style>
     body {
+      margin: 0;
+      padding: 0;
       background: radial-gradient(circle at top, #111 0%, #000 60%);
-      overflow: hidden;
+      color: white;
+      font-family: "Bebas Neue", "Pricedown", sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow-x: hidden;
+      cursor: pointer; /* encourages click-to-play */
     }
 
     h1 {
-      font-family: "Pricedown", "Bebas Neue", sans-serif;
       font-size: 72px;
       color: orange;
-      letter-spacing: 4px;
-      margin-bottom: 30px;
+      letter-spacing: 3px;
       text-shadow: 0 0 15px rgba(255,165,0,0.6);
+      margin-bottom: 10px;
     }
 
-    .enter-text {
-      font-size: 14px;
-      opacity: 0.7;
-      margin-bottom: 20px;
+    h2 {
+      font-size: 22px;
+      color: #ffa500;
+      margin-bottom: 30px;
+      opacity: 0.85;
+      letter-spacing: 1px;
     }
 
-    .nav-buttons a {
+    .nav-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .nav-buttons a, .music-btn {
+      padding: 12px 26px;
       background-color: orange;
       color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
       font-size: 18px;
+      transition: 0.2s;
     }
 
-    .nav-buttons a:hover {
+    .nav-buttons a:hover, .music-btn:hover {
       background-color: #ffb347;
+    }
+
+    .music-btn {
+      display: block;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    /* subtle fade-in animation */
+    .fade-in {
+      animation: fadeUp 1s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
 
 <body onclick="unmuteMusic()">
 
-  <div class="container">
+  <div class="fade-in">
     <h1>701 Hoovers OT</h1>
-    <div class="enter-text">CLICK ANYWHERE TO ENTER</div>
+    <h2>New Haven FiveM Roleplay Gang</h2>
+
+    <button class="music-btn" onclick="playMusic(); event.stopPropagation();">▶ Play Theme</button>
 
     <div class="nav-buttons">
       <a href="roster.html">Roster</a>
       <a href="rules.html">Rules</a>
+      <a href="lore.html">Lore</a>
+      <a href="about.html">About Us</a>
     </div>
   </div>
 
@@ -64,6 +108,10 @@
   ></iframe>
 
   <script>
+    function playMusic() {
+      document.getElementById("ytMusic").src = "https://www.youtube.com/embed/5TEjvmyNpvs?autoplay=1&mute=0&loop=1&playlist=5TEjvmyNpvs";
+    }
+
     function unmuteMusic() {
       const iframe = document.getElementById("ytMusic");
       iframe.src = "https://www.youtube.com/embed/5TEjvmyNpvs?autoplay=1&mute=0&loop=1&playlist=5TEjvmyNpvs";
