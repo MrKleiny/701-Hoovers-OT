@@ -14,16 +14,10 @@
       overflow-x: hidden;
     }
 
-    /* Fade-in animation */
+    /* Fade-in animation for content */
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .roster-wrapper {
@@ -77,16 +71,24 @@
       box-shadow: 0 0 10px rgba(255,165,0,0.45);
     }
 
-    /* OG crown styling */
+    /* OG styling */
     .og {
       border: 1px solid rgba(255,165,0,0.6);
-      box-shadow: 0 0 12px rgba(255,165,0,0.4);
+      box-shadow: 0 0 14px rgba(255,165,0,0.45);
+    }
+
+    /* Crown pulse animation */
+    @keyframes pulseGlow {
+      0% { text-shadow: 0 0 8px #ff9900, 0 0 12px #ff9900, 0 0 16px #ff9900; }
+      50% { text-shadow: 0 0 14px #ffb347, 0 0 20px #ffb347, 0 0 26px #ffb347; }
+      100% { text-shadow: 0 0 8px #ff9900, 0 0 12px #ff9900, 0 0 16px #ff9900; }
     }
 
     .crown {
       display: block;
-      font-size: 18px;
+      font-size: 20px;
       margin-bottom: 4px;
+      animation: pulseGlow 1.5s infinite;
     }
 
     .sub {
