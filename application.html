@@ -44,19 +44,18 @@
       width: 90%; max-width:500px;
     }
 
-    input, textarea, select {
+    input, textarea {
       padding:10px; border-radius:5px; border:1px solid orange; background:#111;
       color:white; font-family:"Bebas Neue", sans-serif; font-size:16px;
       transition: 0.3s;
     }
-    input:focus, textarea:focus, select:focus { outline:none; border-color:#ffb347; box-shadow:0 0 10px #ffb347;}
+    input:focus, textarea:focus { outline:none; border-color:#ffb347; box-shadow:0 0 10px #ffb347;}
 
     button {
       padding:12px; font-size:18px; font-weight:bold; border:none; border-radius:6px;
       background-color:orange; color:black; cursor:pointer; transition:0.3s;
     }
     button:hover { background-color:#ffb347; box-shadow:0 0 15px #ffb347,0 0 30px #ffa500;}
-
   </style>
 </head>
 <body>
@@ -69,14 +68,8 @@
     <input type="text" name="fullname" placeholder="Full Name" required>
     <input type="text" name="discord" placeholder="Discord ID" required>
     <input type="text" name="fivemname" placeholder="FiveM Character Name" required>
-    <select name="role" required>
-      <option value="">Preferred Role</option>
-      <option value="OG">OG</option>
-      <option value="Recruiter">Recruiter</option>
-      <option value="Soldier">Soldier</option>
-      <option value="Driver">Driver</option>
-      <option value="Starter">Starter</option>
-    </select>
+    <input type="number" name="age" placeholder="Are you 14 or older?" required min="14">
+    <textarea name="why" rows="4" placeholder="Why would you like to be a part of 701 Hoovers OT?" required></textarea>
     <textarea name="experience" rows="4" placeholder="Tell us about your RP experience" required></textarea>
     <button type="submit">Submit Application</button>
   </form>
