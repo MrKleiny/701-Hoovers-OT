@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - 701 Hoovers OT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+    /* BODY & BACKGROUND */
+    body {
+      margin:0;
+      padding:0;
+      font-family:"Bebas Neue", "Pricedown", sans-serif;
+      color:white;
+      overflow-x:hidden;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      background:#000;
+      position:relative;
+    }
+
+    /* SKYLINE BACKGROUND */
+    .skyline {
+      position:absolute;
+      bottom:0;
+      left:-100%;
+      width:300%;
+      height:40%;
+      background: linear-gradient(to top,#111 20%,transparent 100%), repeating-linear-gradient(to right,#111 0 20px,#222 20px 40px);
+      animation: moveSkyline 30s linear infinite;
+      z-index:-3;
+    }
+    @keyframes moveSkyline {0%{left:-100%;}100%{left:0%;}}
+
+    /* FOG / SMOKE */
+    body::before {
+      content:"";
+      position:absolute;
+      top:-50%;
+      left:-50%;
+      width:200%;
+      height:200%;
+      background: radial-gradient(circle, rgba(255,165,0,0.05) 0%, transparent 60%), radial-gradient(circle, rgba(255,165,0,0.05) 0%, transparent 60%);
+      background-size:400% 400%;
+      animation: smokeMove 20s linear infinite;
+      z-index:-2;
+    }
+    @keyframes smokeMove {0%{background-position:0% 0%,50% 50%;}50%{background-position:25% 25%,75% 75%;}100%{background-position:0% 0%,50% 50%;}}
+
+    /* GTA CITY GLOW */
+    body::after {
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: radial-gradient(circle at 20% 30%, #ff6600, transparent 40%), radial-gradient(circle at 80% 70%, #ffa500, transparent 40%);
+      background-size: 200% 200%;
+      animation: glowMove 10s ease-in-out infinite alternate;
+      opacity:0.15;
+      z-index:-1;
+    }
+    @keyframes glowMove{0%{background-position:0% 0%,100% 100%;}50%{background-position:20% 30%,80% 70%;}100%{background-position:0% 0%,100% 100%;}}
+
+    /* TITLE */
+    h1 {
+      font-size: 60px;
+      color: orange;
+      margin:30px 0 20px 0;
+      text-shadow:0 0 20px rgba(255,165,0,0.6);
+      position:relative;
+      z-index:1;
+      animation: titleShadow 3s ease-in-out infinite alternate;
+      overflow:hidden;
+    }
+    @keyframes titleShadow {0%{text-shadow:0 0 20px rgba(255,165,0,0.5),0 0 40px rgba(255,165,0,0.3);}50%{text-shadow:0 0 30px rgba(255,165,0,0.7),0 0 60px rgba(255,165,0,0.5);}100%{text-shadow:0 0 20px rgba(255,165,0,0.5),0 0 40px rgba(255,165,0,0.3);}}
+
+    /* SUBHEADING */
+    h2 {
+      font-size: 22px;
+      color:#ffa500;
+      margin-bottom: 40px;
+      opacity:0.85;
+    }
+
+    /* CONTENT AREA */
+    .content {
+      text-align:left;
+      max-width:800px;
+      margin:0 20px 50px 20px;
+      padding:25px;
+      background: rgba(0,0,0,0.6);
+      border:2px solid orange;
+      border-radius:10px;
+      box-shadow:0 0 15px rgba(255,165,0,0.5);
+      font-size:18px;
+      line-height:1.8;
+    }
+    .content p {
+      margin-bottom:15px;
+    }
+
+    /* BACK BUTTON */
+    .back-btn {
+      padding:12px 26px;
+      margin-bottom:40px;
+      background:#000; color:orange; text-decoration:none;
+      border:2px solid orange;
+      border-radius:6px; font-size:18px;
+      font-weight:bold;
+      box-shadow:0 0 8px rgba(255,165,0,0.4);
+      transition:0.3s all;
+      display:inline-block;
+    }
+    .back-btn:hover {
+      color:black;
+      background-color:orange;
+      box-shadow:0 0 20px #ffb347,0 0 40px #ffb347,0 0 60px #ffa500;
+      border-color:#ffb347;
+    }
+
+    /* PARTICLES */
+    .particle {
+      position: absolute; width: 6px; height: 6px;
+      background-color: orange; border-radius: 50%;
+      opacity: 0.7; animation: floatParticle 6s linear infinite;
+      z-index: 0; transition: all 0.3s ease;
+    }
+    .particle:hover { transform: scale(2) translate(-10px,-10px); opacity:1; background-color:#ffb347; box-shadow:0 0 12px #ffb347,0 0 20px #ffa500; }
+    @keyframes floatParticle {0%{transform:translate(0,0) scale(0.5);opacity:0.5;}50%{transform:translate(50px,-50px) scale(1);opacity:1;}100%{transform:translate(0,0) scale(0.5);opacity:0.5;}}
+  </style>
+</head>
+<body>
+  <!-- SKYLINE -->
+  <div class="skyline"></div>
+
+  <!-- PARTICLES -->
+  <div class="particle" style="top:20%; left:10%; animation-duration:5s;"></div>
+  <div class="particle" style="top:50%; left:80%; animation-duration:7s;"></div>
+  <div class="particle" style="top:30%; left:60%; animation-duration:6s;"></div>
+  <div class="particle" style="top:70%; left:30%; animation-duration:8s;"></div>
+  <div class="particle" style="top:60%; left:50%; animation-duration:6.5s;"></div>
+
+  <h1>701 Hoovers OT</h1>
+  <h2>About Us</h2>
+
+  <div class="content">
+    <p>Welcome to 701 Hoovers OT! We are a dedicated gang in the New Haven FiveM Roleplay server, committed to creating immersive and exciting roleplay experiences for all our members.</p>
+    <p>Our gang specializes in coordinated RP, realistic interactions, and maintaining a strong community. Leadership promotes fairness, teamwork, and RP integrity across all activities.</p>
+    <p>We are always recruiting passionate members who want to grow with the gang, contribute to media, help with management, or simply enjoy the RP environment.</p>
+    <p>Respect, loyalty, and in-character roleplay are the pillars of 701 Hoovers OT. We strive to make every session memorable for all participants.</p>
+  </div>
+
+  <a href="index.html" class="back-btn">Back to Home</a>
+</body>
+</html>
