@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <style>
+    /* BODY & BACKGROUND */
     body {
       margin: 0;
       padding: 0;
@@ -22,7 +23,7 @@
       position: relative;
     }
 
-    /* Skyline background */
+    /* SKYLINE BACKGROUND */
     .skyline {
       position: absolute;
       bottom: 0;
@@ -34,10 +35,9 @@
       animation: moveSkyline 30s linear infinite;
       z-index: -3;
     }
+    @keyframes moveSkyline {0%{left:-100%;}100%{left:0%;}}
 
-    @keyframes moveSkyline { 0% { left: -100%; } 100% { left: 0%; } }
-
-    /* Fog/Smoke */
+    /* FOG / SMOKE */
     body::before {
       content: "";
       position: absolute;
@@ -50,10 +50,9 @@
       animation: smokeMove 20s linear infinite;
       z-index: -2;
     }
+    @keyframes smokeMove {0%{background-position:0% 0%,50% 50%;}50%{background-position:25% 25%,75% 75%;}100%{background-position:0% 0%,50% 50%;}}
 
-    @keyframes smokeMove { 0%{background-position:0% 0%,50% 50%;}50%{background-position:25% 25%,75% 75%;}100%{background-position:0% 0%,50% 50%;} }
-
-    /* GTA city glow */
+    /* GTA CITY GLOW */
     body::after {
       content: "";
       position: absolute;
@@ -65,7 +64,7 @@
       opacity: 0.15;
       z-index: -1;
     }
-    @keyframes glowMove { 0%{background-position:0% 0%,100% 100%;}50%{background-position:20% 30%,80% 70%;}100%{background-position:0% 0%,100% 100%;} }
+    @keyframes glowMove{0%{background-position:0% 0%,100% 100%;}50%{background-position:20% 30%,80% 70%;}100%{background-position:0% 0%,100% 100%;}}
 
     /* TITLE & SUBHEADING */
     h1 {
@@ -91,9 +90,9 @@
       z-index: 1;
       animation: titleShadow 3s ease-in-out infinite alternate;
     }
-    @keyframes titleShadow { 0%{text-shadow:0 0 20px rgba(255,165,0,0.5),0 0 40px rgba(255,165,0,0.3);}50%{text-shadow:0 0 30px rgba(255,165,0,0.7),0 0 60px rgba(255,165,0,0.5);}100%{text-shadow:0 0 20px rgba(255,165,0,0.5),0 0 40px rgba(255,165,0,0.3);} }
+    @keyframes titleShadow {0%{text-shadow:0 0 20px rgba(255,165,0,0.5),0 0 40px rgba(255,165,0,0.3);}50%{text-shadow:0 0 30px rgba(255,165,0,0.7),0 0 60px rgba(255,165,0,0.5);}100%{text-shadow:0 0 20px rgba(255,165,0,0.5),0 0 40px rgba(255,165,0,0.3);} }
 
-    /* Neon streaks over title */
+    /* NEON STREAKS OVER TITLE */
     h1::before {
       content:'';
       position:absolute; top:0; left:-150%; width:150%; height:100%;
@@ -150,10 +149,10 @@
   </style>
 </head>
 <body>
-  <!-- Skyline background -->
+  <!-- SKYLINE BACKGROUND -->
   <div class="skyline"></div>
 
-  <!-- Floating particles -->
+  <!-- FLOATING PARTICLES -->
   <div class="particle" style="top:20%; left:10%; animation-duration:5s;"></div>
   <div class="particle" style="top:50%; left:80%; animation-duration:7s;"></div>
   <div class="particle" style="top:30%; left:60%; animation-duration:6s;"></div>
@@ -163,11 +162,12 @@
   <h1>701 Hoovers OT</h1>
   <h2>New Haven FiveM Roleplay Gang</h2>
 
+  <!-- NAVIGATION BUTTONS -->
   <div class="nav-buttons">
     <a href="roster.html">Roster</a>
     <a href="rules.html">Rules</a>
     <a href="about.html">About Us</a>
-    <a href="application.html">Application</a>
+    <a href="https://forms.gle/9KyS7XNEcvip8Hy59" target="_blank">Application</a>
   </div>
 </body>
 </html>
