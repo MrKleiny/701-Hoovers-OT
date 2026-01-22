@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>701 Hoovers OT Application</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin:0; padding:0; font-family:"Bebas Neue", "Pricedown", sans-serif;
+      color:white; overflow-x:hidden; min-height:100vh;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      background:#000; text-align:center; position:relative;
+    }
+
+    /* Skyline background */
+    .skyline { position:absolute; bottom:0; left:-100%; width:300%; height:40%;
+      background: linear-gradient(to top,#111 20%,transparent 100%), repeating-linear-gradient(to right,#111 0 20px,#222 20px 40px);
+      animation: moveSkyline 30s linear infinite; z-index:-3; }
+    @keyframes moveSkyline {0%{left:-100%;}100%{left:0%;}}
+
+    /* Fog / smoke */
+    body::before {
+      content:""; position:absolute; top:-50%; left:-50%; width:200%; height:200%;
+      background: radial-gradient(circle, rgba(255,165,0,0.05) 0%, transparent 60%), radial-gradient(circle, rgba(255,165,0,0.05) 0%, transparent 60%);
+      background-size:400% 400%; animation: smokeMove 20s linear infinite; z-index:-2;
+    }
+    @keyframes smokeMove {0%{background-position:0% 0%,50% 50%;}50%{background-position:25% 25%,75% 75%;}100%{background-position:0% 0%,50% 50%;}}
+
+    body::after {
+      content:""; position:absolute; top:0; left:0; width:100%; height:100%;
+      background: radial-gradient(circle at 20% 30%, #ff6600, transparent 40%), radial-gradient(circle at 80% 70%, #ffa500, transparent 40%);
+      background-size: 200% 200%; animation: glowMove 10s ease-in-out infinite alternate;
+      opacity:0.15; z-index:-1;
+    }
+    @keyframes glowMove{0%{background-position:0% 0%,100% 100%;}50%{background-position:20% 30%,80% 70%;}100%{background-position:0% 0%,100% 100%;}}
+
+    h1 { font-size: 60px; color: orange; margin-bottom:10px; text-shadow:0 0 20px rgba(255,165,0,0.6);}
+    h2 { font-size: 20px; color:#ffa500; margin-bottom:20px; opacity:0.85;}
+
+    form {
+      display:flex; flex-direction:column; gap:15px; background:rgba(0,0,0,0.6);
+      padding:30px; border-radius:10px; border:2px solid orange;
+      box-shadow:0 0 15px rgba(255,165,0,0.5);
+      width: 90%; max-width:500px;
+    }
+
+    input, textarea, select {
+      padding:10px; border-radius:5px; border:1px solid orange; background:#111;
+      color:white; font-family:"Bebas Neue", sans-serif; font-size:16px;
+      transition: 0.3s;
+    }
+    input:focus, textarea:focus, select:focus { outline:none; border-color:#ffb347; box-shadow:0 0 10px #ffb347;}
+
+    button {
+      padding:12px; font-size:18px; font-weight:bold; border:none; border-radius:6px;
+      background-color:orange; color:black; cursor:pointer; transition:0.3s;
+    }
+    button:hover { background-color:#ffb347; box-shadow:0 0 15px #ffb347,0 0 30px #ffa500;}
+
+  </style>
+</head>
+<body>
+  <div class="skyline"></div>
+
+  <h1>701 Hoovers OT</h1>
+  <h2>Application Form</h2>
+
+  <form action="#" method="post">
+    <input type="text" name="fullname" placeholder="Full Name" required>
+    <input type="text" name="discord" placeholder="Discord ID" required>
+    <input type="text" name="fivemname" placeholder="FiveM Character Name" required>
+    <select name="role" required>
+      <option value="">Preferred Role</option>
+      <option value="OG">OG</option>
+      <option value="Recruiter">Recruiter</option>
+      <option value="Soldier">Soldier</option>
+      <option value="Driver">Driver</option>
+      <option value="Starter">Starter</option>
+    </select>
+    <textarea name="experience" rows="4" placeholder="Tell us about your RP experience" required></textarea>
+    <button type="submit">Submit Application</button>
+  </form>
+</body>
+</html>
