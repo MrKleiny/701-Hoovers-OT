@@ -4,21 +4,73 @@
   <meta charset="UTF-8">
   <title>701 Hoovers OT</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- GTA / FiveM style font fallback -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: radial-gradient(circle at top, #111 0%, #000 60%);
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: "Pricedown", "Bebas Neue", sans-serif;
+      font-size: 72px;
+      color: orange;
+      letter-spacing: 4px;
+      margin-bottom: 30px;
+      text-shadow: 0 0 15px rgba(255,165,0,0.6);
+    }
+
+    .enter-text {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 20px;
+    }
+
+    .nav-buttons a {
+      background-color: orange;
+      color: black;
+      font-size: 18px;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #ffb347;
+    }
+  </style>
 </head>
 
-<body>
+<body onclick="unmuteMusic()">
 
   <div class="container">
-
     <h1>701 Hoovers OT</h1>
+    <div class="enter-text">CLICK ANYWHERE TO ENTER</div>
 
     <div class="nav-buttons">
       <a href="roster.html">Roster</a>
       <a href="rules.html">Rules</a>
       <a href="lore.html">Lore</a>
     </div>
-
   </div>
+
+  <!-- YouTube background music (autoplay muted) -->
+  <iframe
+    id="ytMusic"
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/5TEjvmyNpvs?autoplay=1&mute=1&loop=1&playlist=5TEjvmyNpvs"
+    frameborder="0"
+    allow="autoplay"
+  ></iframe>
+
+  <script>
+    function unmuteMusic() {
+      const iframe = document.getElementById("ytMusic");
+      iframe.src = "https://www.youtube.com/embed/5TEjvmyNpvs?autoplay=1&mute=0&loop=1&playlist=5TEjvmyNpvs";
+      document.body.onclick = null;
+    }
+  </script>
 
 </body>
 </html>
