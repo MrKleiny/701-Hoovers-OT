@@ -6,7 +6,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <style>
-    /* BODY & BACKGROUND */
     body {
       margin: 0;
       padding: 0;
@@ -23,7 +22,7 @@
       position: relative;
     }
 
-    /* BACKGROUND SKYLINE */
+    /* Skyline background */
     .skyline {
       position: absolute;
       bottom: 0;
@@ -36,12 +35,9 @@
       z-index: -3;
     }
 
-    @keyframes moveSkyline {
-      0% { left: -100%; }
-      100% { left: 0%; }
-    }
+    @keyframes moveSkyline { 0% { left: -100%; } 100% { left: 0%; } }
 
-    /* FOG/SMOKE */
+    /* Fog/Smoke */
     body::before {
       content: "";
       position: absolute;
@@ -55,32 +51,21 @@
       z-index: -2;
     }
 
-    @keyframes smokeMove {
-      0% { background-position: 0% 0%, 50% 50%; }
-      50% { background-position: 25% 25%, 75% 75%; }
-      100% { background-position: 0% 0%, 50% 50%; }
-    }
+    @keyframes smokeMove { 0%{background-position:0% 0%,50% 50%;}50%{background-position:25% 25%,75% 75%;}100%{background-position:0% 0%,50% 50%;} }
 
-    /* GTA CITY GLOW */
+    /* GTA city glow */
     body::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: radial-gradient(circle at 20% 30%, #ff6600, transparent 40%), radial-gradient(circle at 80% 70%, #ffa500, transparent 40%);
       background-size: 200% 200%;
       animation: glowMove 10s ease-in-out infinite alternate;
       opacity: 0.15;
       z-index: -1;
     }
-
-    @keyframes glowMove {
-      0% { background-position: 0% 0%, 100% 100%; }
-      50% { background-position: 20% 30%, 80% 70%; }
-      100% { background-position: 0% 0%, 100% 100%; }
-    }
+    @keyframes glowMove { 0%{background-position:0% 0%,100% 100%;}50%{background-position:20% 30%,80% 70%;}100%{background-position:0% 0%,100% 100%;} }
 
     /* TITLE & SUBHEADING */
     h1 {
@@ -94,10 +79,7 @@
       animation: titleShadow 3s ease-in-out infinite alternate;
       overflow: hidden;
     }
-
-    h1:hover {
-      text-shadow: 0 0 30px #ffb347, 0 0 50px #ffb347, 0 0 70px #ffa500;
-    }
+    h1:hover { text-shadow: 0 0 30px #ffb347, 0 0 50px #ffb347, 0 0 70px #ffa500; }
 
     h2 {
       font-size: 22px;
@@ -109,124 +91,69 @@
       z-index: 1;
       animation: titleShadow 3s ease-in-out infinite alternate;
     }
+    @keyframes titleShadow { 0%{text-shadow:0 0 20px rgba(255,165,0,0.5),0 0 40px rgba(255,165,0,0.3);}50%{text-shadow:0 0 30px rgba(255,165,0,0.7),0 0 60px rgba(255,165,0,0.5);}100%{text-shadow:0 0 20px rgba(255,165,0,0.5),0 0 40px rgba(255,165,0,0.3);} }
 
-    @keyframes titleShadow {
-      0% { text-shadow: 0 0 20px rgba(255,165,0,0.5), 0 0 40px rgba(255,165,0,0.3); }
-      50% { text-shadow: 0 0 30px rgba(255,165,0,0.7), 0 0 60px rgba(255,165,0,0.5); }
-      100% { text-shadow: 0 0 20px rgba(255,165,0,0.5), 0 0 40px rgba(255,165,0,0.3); }
-    }
-
-    /* NEON STREAKS OVER TITLE */
+    /* Neon streaks over title */
     h1::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -150%;
-      width: 150%;
-      height: 100%;
+      content:'';
+      position:absolute; top:0; left:-150%; width:150%; height:100%;
       background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,165,0,0.8), rgba(255,255,255,0.2));
       transform: skewX(-20deg);
       animation: streakMove 3s linear infinite;
     }
-
-    @keyframes streakMove {
-      0% { left: -150%; }
-      100% { left: 150%; }
-    }
+    @keyframes streakMove {0%{left:-150%;}100%{left:150%;}}
 
     /* FLOATING PARTICLES */
     .particle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background-color: orange;
-      border-radius: 50%;
-      opacity: 0.7;
-      animation: floatParticle 6s linear infinite;
-      z-index: 0;
-      transition: all 0.3s ease;
+      position: absolute; width: 6px; height: 6px;
+      background-color: orange; border-radius: 50%;
+      opacity: 0.7; animation: floatParticle 6s linear infinite;
+      z-index: 0; transition: all 0.3s ease;
     }
-
     .particle:hover {
       transform: scale(2) translate(-10px,-10px);
-      opacity: 1;
-      background-color: #ffb347;
-      box-shadow: 0 0 12px #ffb347, 0 0 20px #ffa500;
+      opacity:1; background-color:#ffb347;
+      box-shadow:0 0 12px #ffb347,0 0 20px #ffa500;
     }
-
-    @keyframes floatParticle {
-      0% { transform: translate(0,0) scale(0.5); opacity: 0.5; }
-      50% { transform: translate(50px,-50px) scale(1); opacity: 1; }
-      100% { transform: translate(0,0) scale(0.5); opacity: 0.5; }
-    }
+    @keyframes floatParticle {0%{transform:translate(0,0) scale(0.5);opacity:0.5;}50%{transform:translate(50px,-50px) scale(1);opacity:1;}100%{transform:translate(0,0) scale(0.5);opacity:0.5;}}
 
     /* NAV BUTTONS */
-    .nav-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      z-index: 1;
-      position: relative;
-    }
-
+    .nav-buttons { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; z-index:1; position:relative; }
     .nav-buttons a {
-      padding: 12px 26px;
-      background-color: #000;
-      color: orange;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-      font-size: 18px;
-      border: 2px solid orange;
-      box-shadow: 0 0 8px rgba(255,165,0,0.4);
-      opacity: 0;
-      animation: fadeInUp 0.6s forwards;
-      position: relative;
-      overflow: hidden;
-      transition: 0.3s all;
+      padding:12px 26px;
+      background-color:#000; color:orange; text-decoration:none; font-weight:bold;
+      border-radius:6px; font-size:18px; border:2px solid orange;
+      box-shadow:0 0 8px rgba(255,165,0,0.4);
+      opacity:0; animation:fadeInUp 0.6s forwards;
+      position:relative; overflow:hidden; transition:0.3s all;
     }
-
-    /* Neon streaks behind buttons */
     .nav-buttons a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -75%;
-      width: 50%;
-      height: 100%;
+      content:'';
+      position:absolute; top:0; left:-75%; width:50%; height:100%;
       background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,165,0,0.8), rgba(255,255,255,0.2));
-      transform: skewX(-20deg);
-      transition: 0.5s all;
+      transform: skewX(-20deg); transition:0.5s all;
     }
-
-    .nav-buttons a:hover::before {
-      left: 150%;
-    }
-
+    .nav-buttons a:hover::before { left:150%; }
     .nav-buttons a:hover {
-      color: black;
-      background-color: orange;
-      box-shadow: 0 0 20px #ffb347, 0 0 40px #ffb347, 0 0 60px #ffa500;
-      border-color: #ffb347;
+      color:black; background-color:orange;
+      box-shadow:0 0 20px #ffb347,0 0 40px #ffb347,0 0 60px #ffa500;
+      border-color:#ffb347;
     }
 
-    .nav-buttons a:nth-child(1) { animation-delay: 0.2s; }
-    .nav-buttons a:nth-child(2) { animation-delay: 0.4s; }
-    .nav-buttons a:nth-child(3) { animation-delay: 0.6s; }
+    /* Sequential animation for 4 buttons */
+    .nav-buttons a:nth-child(1){animation-delay:0.2s;}
+    .nav-buttons a:nth-child(2){animation-delay:0.4s;}
+    .nav-buttons a:nth-child(3){animation-delay:0.6s;}
+    .nav-buttons a:nth-child(4){animation-delay:0.8s;}
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeInUp {from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
   </style>
 </head>
-
 <body>
-  <!-- BACKGROUND SKYLINE -->
+  <!-- Skyline background -->
   <div class="skyline"></div>
 
-  <!-- FLOATING PARTICLES -->
+  <!-- Floating particles -->
   <div class="particle" style="top:20%; left:10%; animation-duration:5s;"></div>
   <div class="particle" style="top:50%; left:80%; animation-duration:7s;"></div>
   <div class="particle" style="top:30%; left:60%; animation-duration:6s;"></div>
@@ -240,6 +167,7 @@
     <a href="roster.html">Roster</a>
     <a href="rules.html">Rules</a>
     <a href="about.html">About Us</a>
+    <a href="application.html">Application</a>
   </div>
 </body>
 </html>
